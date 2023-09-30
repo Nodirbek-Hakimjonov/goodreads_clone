@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+Profile Page
+{% endblock %}
+{% block content %}
+
+            <div class=" image d-flex flex-column justify-content-center align-items-center">
+                <button class="btn btn-secondary"> <img src="{{ user.profile_picture.url }}" height="100" width="100" />
+                </button> <span class="name mt-3">{{ user.first_name }} {{ user.last_name }}</span> <span class="idd">{{ user.email }}</span><span class="idd">@{{ user.username }}</span>
+                <div class=" d-flex mt-2"><a class="btn btn-dark" href="{% url 'users:profile-edit' %}">Profile Edit</a> </div>
+                <div class=" px-2 rounded mt-4 date "> <span class="join">Joined {{ user.date_joined|date:"M d,Y" }}</span>
+                </div>
+            </div>
+
+{#<h1>Profile Page</h1>#}
+{#<img class="profile-pic" alt="Profile Picture" src="{{ user.profile_picture.url }}">#}
+{#<div>#}
+{#<a href="{% url 'users:profile-edit' %}">Profile Edit</a>#}
+{#</div>#}
+{#<p>Username: {{ user.username }}</p>#}
+{#<p>First name: {{ user.first_name}}</p>#}
+{#<p>Last name: {{ user.last_name }}</p>#}
+{#<p>Email: {{ user.email  }}</p>#}
+{% endblock %}
