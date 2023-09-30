@@ -19,7 +19,7 @@ generics==6.0.0
 gunicorn==19.0.0
 kombu
 packaging==23.1
-Pillow==10.0.0
+Pillow==8.4.0
 prompt-toolkit==3.0.39
 psycopg2==2.9.6
 psycopg2-binary==2.9.8
