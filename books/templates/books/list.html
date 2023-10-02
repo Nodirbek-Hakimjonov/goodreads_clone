@@ -31,7 +31,7 @@ Book page
 
                     <a href="{% url 'books:detail' book.id %}">{{ book.title }}</a>
                     <p>
-                        {{ book.description }}
+                        {{ book.description |truncatewords:100 }}
                     </p>
               </div>
 
