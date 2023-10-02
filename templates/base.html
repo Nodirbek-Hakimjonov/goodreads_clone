@@ -131,9 +131,10 @@
 <body>
     <nav class="navbar navbar-light navbar-expand-lg mb-4" style="background-color: #F4F1EA;">
         <div class="container-md">
-            <a class="navbar-brand" href="{% url 'landing_page' %}" style="width: 140px">
-                <img src="{% static 'img/brand.png' %}" alt="Logo" />
-            </a>
+{#            <a class="navbar-brand" href="{% url 'landing_page' %}" style="width: 140px">#}
+{#                <img src="{% static 'img/brand.png' %}" alt="Logo" />#}
+{#            </a>#}
+         <a class="navbar-brand" href="{% url  'landing_page' %}">Goodreads clone</a>#}
             {% comment %} <a class="navbar-brand" href="{% url 'landing_page' %}" style="color: #835546 !important; font-size: 1.7rem">good<strong>Reads </strong> Clone</a> {% endcomment %}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
