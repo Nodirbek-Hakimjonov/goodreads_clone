@@ -1,6 +1,6 @@
 from django.core.mail import send_mail
 
-from goodreads.celery import app
+from goodreads.celery1 import app
 
 
 @app.task()
