@@ -3,34 +3,34 @@
 {% url 'home_page' as home_page_url %}
 {% url 'users:profile' as profile_page_url %}
 {% url 'users:profile-edit' as profile_edit_page_url %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
-</head>
-<body class="mx-5">
-<nav class="navbar navbar-expand-lg mb-4 navbar-dark bg-primary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{% url  'landing_page' %}">Goodreads clone</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link {% if request.path == home_page_url %} active {% endif %}" aria-current="page" href="{{home_page_url}}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if request.path == books_page_url %} active {% endif %}" aria-current="page" href="{{books_page_url}}">Books</a>
-                </li>
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>{% block title %}{% endblock %}</title>#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1" />#}
+{##}
+{#    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"#}
+{#          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">#}
+{#    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">#}
+{#    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">#}
+{#</head>#}
+{#<body class="mx-5">#}
+{#<nav class="navbar navbar-expand-lg mb-4 navbar-dark bg-primary">#}
+{#    <div class="container-fluid">#}
+{#        <a class="navbar-brand" href="{% url  'landing_page' %}">Goodreads clone</a>#}
+{#        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"#}
+{#                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">#}
+{#            <span class="navbar-toggler-icon"></span>#}
+{#        </button>#}
+{#        <div class="collapse navbar-collapse" id="navbarSupportedContent">#}
+{#            <ul class="navbar-nav me-auto mb-2 mb-lg-0">#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link {% if request.path == home_page_url %} active {% endif %}" aria-current="page" href="{{home_page_url}}">Home</a>#}
+{#                </li>#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link {% if request.path == books_page_url %} active {% endif %}" aria-current="page" href="{{books_page_url}}">Books</a>#}
+{#                </li>#}
                 {#        <li class="nav-item">#}
                 {#          <a class="nav-link" href="#">Link</a>#}
                 {#        </li>#}
@@ -48,37 +48,37 @@
                 {#        <li class="nav-item">#}
                 {#          <a class="nav-link disabled" aria-disabled="true">Disabled</a>#}
                 {#        </li>#}
-            </ul>
-            <div class="me-5">
-                {% if request.user.is_authenticated %}
-                    <ul class="navbar-nav ">
-                        <li class=" nav-item dropdown">
-                            <a class="nav-link dropdown-toggle {% if request.path == profile_page_url or request.path == profile_edit_page_url  %} active {% endif %}  " href="#" role="button" data-bs-toggle="dropdown"
-                               aria-expanded="false">
-                                {{ request.user.username }}
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ profile_page_url }}">Profile</a></li>
-
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="{% url 'users:logout' %}">Logout</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                {% else %}
-                    <a class="btn btn-outline-info" href="{% url 'users:login' %}">Login</a>
-                {% endif %}
-
-            </div>
+{#            </ul>#}
+{#            <div class="me-5">#}
+{#                {% if request.user.is_authenticated %}#}
+{#                    <ul class="navbar-nav ">#}
+{#                        <li class=" nav-item dropdown">#}
+{#                            <a class="nav-link dropdown-toggle {% if request.path == profile_page_url or request.path == profile_edit_page_url  %} active {% endif %}  " href="#" role="button" data-bs-toggle="dropdown"#}
+{#                               aria-expanded="false">#}
+{#                                {{ request.user.username }}#}
+{#                            </a>#}
+{#                            <ul class="dropdown-menu">#}
+{#                                <li><a class="dropdown-item" href="{{ profile_page_url }}">Profile</a></li>#}
+{##}
+{#                                <li>#}
+{#                                    <hr class="dropdown-divider">#}
+{#                                </li>#}
+{#                                <li><a class="dropdown-item" href="{% url 'users:logout' %}">Logout</a></li>#}
+{#                            </ul>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                {% else %}#}
+{#                    <a class="btn btn-outline-info" href="{% url 'users:login' %}">Login</a>#}
+{#                {% endif %}#}
+{##}
+{#            </div>#}
             {#      <form class="d-flex" role="search">#}
             {#        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">#}
             {#        <button class="btn btn-outline-success" type="submit">Search</button>#}
             {#      </form>#}
-        </div>
-    </div>
-</nav>
+{#        </div>#}
+{#    </div>#}
+{#</nav>#}
 {#<p>#}
 {##}
 {#      <a href="{% url 'books:list' %}">Books</a>    / <a href="{% url 'users:profile' %}">Profile</a>#}
@@ -90,25 +90,121 @@
 {#    {% endif %}#}
 {##}
 {#</p>#}
-<div class="container">
-    {% if messages %}
-        <div class="mt-4">
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}" role="alert">
-                    {{ message }}
-                </div>
+{#<div class="container">#}
+{#    {% if messages %}#}
+{#        <div class="mt-4">#}
+{#            {% for message in messages %}#}
+{#                <div class="alert alert-{{ message.tags }}" role="alert">#}
+{#                    {{ message }}#}
+{#                </div>#}
+{##}
+{##}
+{#            {% endfor %}#}
+{#        </div>#}
+{##}
+{#    {% endif %}#}
+{#    {% block content %}{% endblock content %}#}
+{#</div>#}
+{##}
+{##}
+{#<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"#}
+{#        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"#}
+{#        crossorigin="anonymous"></script>#}
+{#</body>#}
+{#</html>#}
+{% load static %}
+{% url 'home' as home_page_url %}
+{% url 'books:books_list' as books_list_url %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Goodreads Clone{% endblock  %}</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    {% comment %} custom style {% endcomment %}
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg mb-4" style="background-color: #F4F1EA;">
+        <div class="container-md">
+            <a class="navbar-brand" href="{% url 'landing_page' %}" style="width: 140px">
+                <img src="{% static 'img/brand.png' %}" alt="Logo" />
+            </a>
+            {% comment %} <a class="navbar-brand" href="{% url 'landing_page' %}" style="color: #835546 !important; font-size: 1.7rem">good<strong>Reads </strong> Clone</a> {% endcomment %}
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            {% endfor %}
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    {% if user.is_staff %}
+                        <li class="nav-item text-center">
+                            <a class="nav-link hover" aria-current="page" href="{% url 'api:review-list' %}">API Reviews List</a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item text-center">
+                        <a class="nav-link hover {% if request.path == home_page_url %} nav_active {% endif %}" aria-current="page" href="{{ home_page_url }}">Reviews</a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link hover {% if request.path == books_page_url %} nav_active {% endif %}" aria-current="page" href="{{ books_page_url }}">Books</a>
+                    </li>
+{#                     <li class="nav-item">#}
+{#                        <a class="nav-link {% if request.path == home_page_url %} active {% endif %}" aria-current="page" href="{{home_page_url}}">Home</a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link {% if request.path == books_page_url %} active {% endif %}" aria-current="page" href="{{books_page_url}}">Books</a>#}
+{#                    </li>#}
+                </ul>
+
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <button class="btn btn-dark dropdown-toggle" style="background-color: #835546 !important; color: white; border:0;" data-bs-toggle="dropdown" aria-expanded="false">
+                                <strong>{{ request.user.first_name }}</strong>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url 'users:profile' %}">Dashboard</a></li>
+                                <li><a class="dropdown-item" href="{% url "users:logout" %}">Logout</a></li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li class="nav-item dropdown">
+                            <button class="btn btn-dark dropdown-toggle" style="background-color: #835546 !important; color: white; border:0;" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url "users:login" %}">Login</a></li>
+                                <li><a class="dropdown-item" href="{% url "users:register" %}">Registration</a></li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                </ul>
+
+            </div>
         </div>
+    </nav>
 
-    {% endif %}
-    {% block content %}{% endblock content %}
-</div>
+    <div class="container-md">
 
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-3" role="alert">
+                <strong>{{ message }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endfor %}
+        {% endif %}
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+        {% block content %}
+        {% endblock  %}
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
 </body>
 </html>
